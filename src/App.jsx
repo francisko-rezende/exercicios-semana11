@@ -1,12 +1,18 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import { useCustomTheme } from "./hooks/useCustomTheme";
+import { CustomThemeProvider } from "./contexts/CustomThemeProvider";
+import { Layout } from "./components/Layout";
+import styled from "styled-components";
+
+const Test = styled.div`
+  background: ${({ theme }) => theme.colors.backgroundPrimary};
+  width: 100px;
+  height: 100px;
+`;
 
 function App() {
   const [count, setCount] = useState(0);
-
-  const { theme, toggleTheme } = useCustomTheme();
 
   return (
     <>
@@ -32,10 +38,11 @@ function App() {
           Click on the Vite and React logos to learn more
         </p>
       </div>
-      <div>
-        O tema é {theme}
-        <button onClick={toggleTheme}>mudar tema</button>
-      </div>
+      <CustomThemeProvider>
+        <Layout>
+          <Test>a</Test>
+        </Layout>
+      </CustomThemeProvider>
     </>
   );
 }
