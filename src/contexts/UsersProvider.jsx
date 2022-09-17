@@ -5,7 +5,9 @@ import { users as userData } from "../assets/data/users";
 export const UsersContext = createContext();
 
 export const UsersProvider = ({ children }) => {
-  const [users, setUsers] = useState(userData);
+  const [users, setUsers] = useState(
+    JSON.parse(localStorage.getItem("users")) || userData,
+  );
 
   const toggleFollow = (userId) => {
     const profile = users.find(({ id }) => id === userId);

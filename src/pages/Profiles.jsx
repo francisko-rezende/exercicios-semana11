@@ -1,19 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { useUsers } from "../hooks";
 import { Card } from "../components/Card/Card";
 
-const Profiles = (props) => {
-  const { users } = useUsers();
+const Profiles = () => {
+  const { users, toggleFollow } = useUsers();
   return (
     <div>
       {users.map((user) => (
-        <Card key={user.id} {...user} />
+        <Card key={user.id} toggleFollow={toggleFollow} {...user} />
       ))}
     </div>
   );
 };
-
-Profiles.propTypes = {};
 
 export default Profiles;
