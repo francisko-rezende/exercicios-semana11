@@ -3,6 +3,7 @@ import { useCustomTheme } from "../../hooks/useCustomTheme";
 import { themeDark, themeLight } from "../../themes";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../../themes/GlobalStyles";
+import { UsersProvider } from "../../contexts";
 
 export const Layout = ({ children }) => {
   const { theme } = useCustomTheme();
@@ -11,7 +12,7 @@ export const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={selectedTheme}>
-      {children}
+      <UsersProvider>{children}</UsersProvider>
       <GlobalStyles />
     </ThemeProvider>
   );

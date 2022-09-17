@@ -1,5 +1,3 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { useCustomTheme } from "../../hooks/useCustomTheme";
 import * as S from "./Navbar.styles";
 

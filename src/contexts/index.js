@@ -1,1 +1,2 @@
-export { Navbar } from "../components/Navbar/Navbar";
+export { CustomThemeProvider } from "./CustomThemeProvider";
+export { UsersProvider } from "./UsersProvider";
