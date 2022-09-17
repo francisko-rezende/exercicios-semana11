@@ -9,7 +9,6 @@ export const Layout = ({ children }) => {
 
   const selectedTheme = theme === "dark" ? themeDark : themeLight;
 
-  console.log(selectedTheme);
   return (
     <ThemeProvider theme={selectedTheme}>
       {children}

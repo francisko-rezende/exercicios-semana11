@@ -4,5 +4,6 @@ export const themeLight = {
     backgroundSecondary: "#fff1e7",
     primary: "#db4324",
     secondary: "#a07653",
+    text: "#341711",
   },
 };
