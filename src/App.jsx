@@ -1,14 +1,14 @@
 import { CustomThemeProvider } from "./contexts/CustomThemeProvider";
 import { Layout } from "./components/Layout";
 import { Navbar } from "./components/Navbar";
-import { Card } from "./components/Card/Card";
+import Profiles from "./pages/Profiles";
 
 function App() {
   return (
     <CustomThemeProvider>
       <Layout>
         <Navbar />
-        <Card />
+        <Profiles />
       </Layout>
     </CustomThemeProvider>
   );

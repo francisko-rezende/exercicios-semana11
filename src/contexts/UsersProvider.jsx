@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import { createContext, useState, useEffect } from "react";
+import { users as userData } from "../assets/data/users";
 
 export const UsersContext = createContext();
 
 export const UsersProvider = ({ children }) => {
-  const [users, setUsers] = useState();
+  const [users, setUsers] = useState(userData);
 
   const toggleFollow = (userId) => {
     const profile = users.find(({ id }) => id === userId);
@@ -19,11 +20,11 @@ export const UsersProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    localStorage.setItem("users", users);
+    localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
 
   useEffect(() => {
-    setUsers(localStorage.getItem("users"));
+    setUsers(JSON.parse(localStorage.getItem("users")));
   }, []);
 
   return (
